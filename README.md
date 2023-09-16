@@ -1,0 +1,23 @@
+# Yu gi oh!
+a yu gi oh api based app by Pisani Fabio
+## Descrizione:
+- Create un nuovo progetto utilizzando Vite e Vue 3 e definite i componenti necessari per strutturare il layout come da screenshot allegato.
+- Al caricamento della pagina, effettuate una chiama ajax all'API di Yu Gi Oh: https://db.ygoprodeck.com/api/v7/cardinfo.php
+e con i dati restituiti, stampate una card per ogni carta.
+## Bonus:
+Creare un componente loader da visualizzare fintantoché i risultati non sono pronti.
+
+## Link a documentazioni esterne:
+|nome|Link|
+|----|----|
+|Yu-gi-oh prodeck API Guide|<a href="https://ygoprodeck.com/api-guide/">ygoprodeck</a>|
+
+
+## Technologie usate:
+|nome|Link|
+|----|----|
+|Yu-gi-oh prodeck API|<a href="https://ygoprodeck.com">ygoprodeck</a>|
+|Bootstrap||
+|Axios||
+|vue||
+|vite||
