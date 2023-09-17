@@ -1,31 +1,33 @@
 <script>
-// import MyComponent from "./components/MyComponent.vue";
 
 export default {
-  data() {
-    return {
-      title: "Hello world",
-      span:'drago bianco occhi blu',
-      span2:'drago "occhi"'
+    props:{
+        name:String,
+        archetype:String,
+        cardImages:String,
+
+    },
+    data() {
+        return {
+            title: "Hello world",
+            span:'drago bianco occhi blu',
+            span2:'drago "occhi"'
     }
   }
 
-  // components: {
-  //   MyComponent,
-  // },
 };
 </script>
 
 <template>
   <div class="card-detail">
     <div class="card-img">
-        <img src="" alt="">
+        <img :src="cardImages" alt="">
     </div>
     <span class="name">
-        {{ span }}
+        {{ name }}
     </span>
     <span class="description ">
-        {{ span2 }}
+        {{ archetype }}
     </span>
 
   </div>
@@ -37,6 +39,12 @@ export default {
     width: calc((100% - 8rem)/5);
     margin: .5rem;
     background-color: #d48f38;
+    .card-img{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
     .name{
         display: block;
         color: #f9f9f9;

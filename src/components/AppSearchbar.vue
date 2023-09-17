@@ -1,16 +1,26 @@
 <script>
-// import MyComponent from "./components/MyComponent.vue";
+import {store} from "../data/store"
+
 
 export default {
-  data() {
-    return {
-      title: "Hello world",
-    };
-  },
 
-  // components: {
-  //   MyComponent,
-  // },
+    data() {
+        return {
+          title: "Hello world",
+          store
+        };
+    },
+    methods: {
+      fetchCardsByArchetype (archetype){
+      store.cards = []
+      axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=" + archetype).then((res) => {
+        store.cards = res.data.data;
+
+    });
+    },
+    }
+
+
 };
 </script>
 
@@ -18,11 +28,10 @@ export default {
     <div class="search my-4">
         <div class="container">
           <div class="search-container">
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="form-select" aria-label="Archetype_search">
+              <option selected>Select an archetype</option>
+              <option v-for="(archetype,index) in store.archetypes" value="index" @change="fetchCardsByArchetype(archetype)">{{archetype}}</option>
+
             </select>
           </div>
         </div>
